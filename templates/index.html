@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-3">
+            <br>
+            <form method="POST" action="{{ url_for('api.post_results') }}">
+                <div class="text-center mb-4">
+                    <h1 class="h3 mb-3 font-weight-normal">Locate Earthquakes!</h1>
+                    <p>Select an option from the dropdown menu and click Get Data below!</p>
+                  </div>
+              
+                  <div class="form-label-group text-center">
+                      <select class="form-control" name="duration">
+                          <option value="">-- Select --</option>
+                          <option value="all_hour">1 Hour</option>
+                          <option value="all_day">1 Day</option>
+                      </select>
+
+                      <hr>
+                  </div>
+                  <button class="btn btn-lg btn-info btn-block" type="submit">Get Data</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
